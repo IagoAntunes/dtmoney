@@ -55,5 +55,22 @@
       });
     });
   </script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "...",
+      authDomain: "dtmoney.firebaseapp.com",
+      databaseURL: "https://dtmoney.firebaseio.com",
+      projectId: "dtmoney",
+      storageBucket: "dtmoney.appspot.com",
+      messagingSenderId: "...",
+      appId: "1:...:web:...",
+      measurementId: "G-...",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>

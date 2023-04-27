@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "260157242893",
+    "project_id": "dtmoney-27f27",
+    "storage_bucket": "dtmoney-27f27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260157242893:android:956f2b2dcb8ed5feb31f44",
+        "android_client_info": {
+          "package_name": "com.example.dtmoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260157242893-cirfkhn29opp9n0nh9adqhr7tld9hd3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5LdYOUA0lvc1bRrxSDr22THij-pyC8z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260157242893-cirfkhn29opp9n0nh9adqhr7tld9hd3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
