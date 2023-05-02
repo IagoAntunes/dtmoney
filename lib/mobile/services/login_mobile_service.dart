@@ -22,15 +22,17 @@ class LoginMobileService {
     return null;
   }
 
-  Future<String?> criarConta(String email, String senha, String nome) async {
+  Future<UserCredential?> criarConta(
+      String email, String senha, String nome) async {
+    UserCredential? userCredential;
     try {
-      UserCredential userCredential = await firebaseAuth
-          .createUserWithEmailAndPassword(email: email, password: senha);
+      userCredential = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: senha);
       userCredential.user!.updateDisplayName(nome);
     } on FirebaseAuthException catch (e) {
-      return e.message;
+      return null;
     }
-    return null;
+    return userCredential;
   }
 
   Future<String?> deslogar() async {

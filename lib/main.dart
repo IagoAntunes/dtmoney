@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:dtmoney/mobile/pages/home_mobile_page.dart';
+import 'package:dtmoney/mobile/pages/home/home_mobile_page.dart';
 import 'package:dtmoney/mobile/pages/login_mobile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

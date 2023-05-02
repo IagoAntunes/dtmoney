@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dtmoney/core/models/account_model.dart';
 import 'package:dtmoney/mobile/services/login_mobile_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../core/colors/app_colors.dart';
 
@@ -300,10 +303,21 @@ class _LoginMobilePageState extends State<LoginMobilePage> {
           .criarConta(
               emailController.text, senhaController.text, nomeController.text)
           .then(
-        (value) {
+        (value) async {
           if (value != null) {
-            print("erro");
-          }
+            FirebaseFirestore firestore = FirebaseFirestore.instance;
+            AccountModel account = AccountModel(
+              id: value.user!.uid,
+              totalEntries: 0,
+              totalOutputs: 0,
+              totalgross: 0,
+              listTransactions: [],
+            );
+            await firestore
+                .collection('accounts')
+                .doc(value.user!.uid)
+                .set(account.toMap());
+          } else {}
         },
       );
     }
