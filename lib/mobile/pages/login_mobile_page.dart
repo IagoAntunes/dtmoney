@@ -4,12 +4,11 @@ import 'package:dtmoney/mobile/services/login_mobile_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:uuid/uuid.dart';
 
 import '../../core/colors/app_colors.dart';
 
 class LoginMobilePage extends StatefulWidget {
-  LoginMobilePage({super.key});
+  const LoginMobilePage({super.key});
 
   @override
   State<LoginMobilePage> createState() => _LoginMobilePageState();
@@ -72,6 +71,7 @@ class _LoginMobilePageState extends State<LoginMobilePage> {
                         ),
                       ),
                       child: TextFormField(
+                        key: const Key('emailTextField'),
                         controller: emailController,
                         style: const TextStyle(
                           color: AppColors.greyText,
@@ -105,6 +105,7 @@ class _LoginMobilePageState extends State<LoginMobilePage> {
                         ),
                       ),
                       child: TextFormField(
+                        key: const Key('senhaTextField'),
                         controller: senhaController,
                         style: const TextStyle(
                           color: AppColors.greyText,
@@ -253,6 +254,7 @@ class _LoginMobilePageState extends State<LoginMobilePage> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
+                        key: const Key("signButton"),
                         style: ElevatedButton.styleFrom(),
                         onPressed: () async {
                           if (isSignIn) {

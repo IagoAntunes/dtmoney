@@ -2,32 +2,36 @@ import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class TransactionModel {
-  String id;
-  DateTime date;
+  String description;
+  double price;
+  String date;
+  String category;
   bool isEntrie;
-  String value;
   TransactionModel({
-    required this.id,
+    required this.description,
+    required this.price,
     required this.date,
+    required this.category,
     required this.isEntrie,
-    required this.value,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'id': id,
-      'date': date.millisecondsSinceEpoch,
+      'description': description,
+      'price': price,
+      'date': date,
+      'category': category,
       'isEntrie': isEntrie,
-      'value': value,
     };
   }
 
   factory TransactionModel.fromMap(Map<String, dynamic> map) {
     return TransactionModel(
-      id: map['id'] as String,
-      date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
+      description: map['description'] as String,
+      price: map['price'] as double,
+      date: map['date'] as String,
+      category: map['category'] as String,
       isEntrie: map['isEntrie'] as bool,
-      value: map['value'] as String,
     );
   }
 
